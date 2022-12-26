@@ -1,5 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn /*OneToMany*/ } from 'typeorm';
-// import { Photo } from '../photos/photo.entity';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import { Nationality } from '../../nationalities/entities/nationality.entity';
 
 export enum UserRole {
   ADMIN = "admin",
@@ -31,6 +31,7 @@ export class Users {
   @Column("simple-json")
   profile: { nickname: string };
 
-  // @OneToMany(type => Photo, photo => photo.user)
-  // photos: Photo[];
+  @OneToMany(() => Nationality, (nationality) => nationality.user)
+  nationalities: Nationality[];
+
 }
