@@ -1,11 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
-import { Nationality } from '../../nationalities/entities/nationality.entity';
-
-export enum UserRole {
-  ADMIN = "admin",
-  EDITOR = "editor",
-  GHOST = "ghost",
-}
+import { Nationality } from 'modules/nationalities/entities/nationality.entity';
+import { UserRole } from 'config/enum/user.roles';
 
 @Entity()
 export class Users {

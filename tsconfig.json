@@ -9,7 +9,11 @@
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
+    "baseUrl": "./src",
+    "paths": {
+      "@datorama/utils/*": ["app/utils/*"],
+      "@datorama/pipes/*": ["app/pipes/*"]
+    },
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,
